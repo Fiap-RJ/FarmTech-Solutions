@@ -22,6 +22,17 @@ def read_data(data):
 
     return data
 
+def get_data(index, data):
+    """
+    Retrieves a value from the data list based on the given index.
+    """
+    if index < 0 or index >= len(data):
+        print("Invalid index!")
+        return None
+
+    return data[index]
+
+
 def update_data(index, new_value, data):
     """
     Updates a value in the data list based on the given index.
@@ -45,3 +56,4 @@ def delete_data(index, data):
         print(f"Data removed: {removed_value}")
 
     return data
+
