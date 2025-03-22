@@ -1,23 +1,17 @@
-from crud import (
-    delete_data as remover_fazenda,
-    create_data as adicionar_fazenda,
-    read_data as listar_fazendas,
-    get_data as obter_fazenda,
-    update_data as alterar_fazenda,
-)
+from gerenciador_fazenda import alterar_fazenda
 
 culturas = {
     "cana_de_acucar": {
         "l_s_ha": 0.099,  # l/s/ha (litros/segundo/hectare) # Agua necessária para a cultura de cana-de-açúcar
-        "nitrogenio/ha": 150,  # Nitrogênio necessário por hectare
-        "fosforo/ha": 45,  # Fósforo necessário por hectare
-        "potassio/ha": 115,  # Potássio necessário por hectare
+        "nitrogenio": 150,  # Nitrogênio necessário por hectare
+        "fosforo": 45,  # Fósforo necessário por hectare
+        "potassio": 115,  # Potássio necessário por hectare
     },
     "tomate": {
         "l_s_ha": 0.075,  # l/s/ha (litros/segundo/hectare) # Agua necessária para a cultura de tomate
-        "nitrogenio/ha": 125,  # Nitrogênio necessário por hectare
-        "fosforo/ha": 65,  # Fósforo necessário por hectare
-        "potassio/ha": 125,  # Potássio necessário por hectare
+        "nitrogenio": 125,  # Nitrogênio necessário por hectare
+        "fosforo": 65,  # Fósforo necessário por hectare
+        "potassio": 125,  # Potássio necessário por hectare
     },
 }
 
@@ -52,6 +46,7 @@ def inserir_plantio(id_fazenda, fazenda):
     dados_cultura = culturas[cultura]
 
     plantio = {
+        "cultura": cultura,
         "area_plantio": area_plantio,
         "quantidade_ruas": ruas,
         "tamanho_rua": tamanho_rua,
@@ -72,17 +67,20 @@ def exibir_plantio(fazenda):
     """
     plantio = fazenda.get("plantio")
     if not plantio:
-        print("Nenhum dado de plantio encontrado.")
+        print("\nNenhum dado de plantio encontrado.")
     else:
         print("\nDados de plantio:")
         print(f"Cultura: {plantio['cultura']}")
         print(f"Quantidade de ruas: {plantio['quantidade_ruas']}")
         print(f"Tamanho da rua: {plantio['tamanho_rua']} m")
         print(f"Área de plantio: {plantio['area_plantio']} m²")
-        print(f"Água necessária: {plantio['agua_necessaria']} l/s")
+        print(f"Água necessária: {plantio['agua_necessaria']} litros/segundos")
         print(f"Nitrogênio necessário: {plantio['nitrogenio_necessario']} kg")
         print(f"Fósforo necessário: {plantio['fosforo_necessario']} kg")
         print(f"Potássio necessário: {plantio['potassio_necessario']} kg")
+
+    print("-" * 30 + "\n")
+    input("Pressione Enter para continuar...")
 
 
 def alterar_plantio(id_fazenda, fazenda):
