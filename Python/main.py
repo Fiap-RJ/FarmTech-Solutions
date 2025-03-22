@@ -53,6 +53,7 @@ def gerenciar_fazenda():
         )
         if id_fazenda.lower() == "voltar":
             return
+        id_fazenda = int(id_fazenda)
         fazenda = obter_fazenda(id_fazenda)
         if not fazenda:
             print("fazenda não encontrada.")
