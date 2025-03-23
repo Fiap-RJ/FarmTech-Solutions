@@ -30,7 +30,7 @@ def menu_principal():
             largura = float(input("Largura do terreno (m): "))
             comprimento = float(input("Comprimento do terreno (m): "))
             area = largura * comprimento
-            adicionar_fazenda(nome, area)
+            adicionar_fazenda(nome, area, largura, comprimento)
         elif escolha == "2":
             gerenciar_fazenda()
         elif escolha == "3":
@@ -78,6 +78,8 @@ def gerenciar_fazenda():
             elif escolha == "2":
                 largura = float(input("Nova largura do terreno (m): "))
                 comprimento = float(input("Novo comprimento do terreno (m): "))
+                fazenda["comprimento"] = comprimento
+                fazenda["largura"] = largura
                 fazenda["area"] = largura * comprimento
                 alterar_fazenda(id_fazenda, fazenda)
                 return

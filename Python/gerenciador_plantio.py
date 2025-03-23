@@ -23,11 +23,17 @@ def inserir_plantio(id_fazenda, fazenda):
     ruas = int(input("Número de ruas: "))
     tamanho_rua = float(input("Tamanho da rua (m): "))
 
-    area_total = fazenda["area"]
-    area_rua = ruas * tamanho_rua
-    area_plantio = area_total - area_rua
+    tamanho_das_ruas = ruas * tamanho_rua
+    area_plantio = tamanho_das_ruas * fazenda["largura"]
 
-    print(f"Area de plantio: {area_plantio} m²")
+    if (fazenda["comprimento"] > fazenda["largura"]):
+        area_plantio = tamanho_das_ruas * fazenda["comprimento"]
+
+    print(f'Comprimento da fazenda: {fazenda["comprimento"]} m\n'
+          f'Largura da fazenda: {fazenda["largura"]} m\n'
+          f'Número de ruas da plantação: {ruas}\n'
+          f'Tamanho da rua da plantação: {tamanho_rua} m\n'
+          f'Área de plantio: {area_plantio} m²')
 
     print("Selecione a cultura plantada:")
     print("1. Cana-de-açúcar")
