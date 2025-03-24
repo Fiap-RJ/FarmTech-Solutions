@@ -1,11 +1,11 @@
 fazendas = []
 
 
-def adicionar_fazenda(nome: str, area: float):
-    fazendas.append({"nome": nome, "area": area})
+def adicionar_fazenda(nome: str, area: float, comprimento, largura):
+    fazendas.append({"nome": nome, "area": area, "comprimento": comprimento, "largura": largura})
     id_fazenda = len(fazendas) - 1
     print(
-        f"Fazenda cadastrada com sucesso!\nID: {id_fazenda}\nNome: {nome}\nÁrea: {area} m²"
+        f"Fazenda cadastrada com sucesso!\nID: {id_fazenda}\nNome: {nome}\nComprimento: {comprimento}\nLargura: {largura}\nÁrea: {area} m²"
     )
 
 
