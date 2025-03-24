@@ -36,6 +36,5 @@ def remover_fazenda(id_fazenda: int):
 def alterar_fazenda(id_fazenda: int, fazenda: dict):
     if 0 <= id_fazenda < len(fazendas):
         fazendas[id_fazenda] = fazenda
-        print("Fazenda alterada com sucesso!")
     else:
         print("Fazenda não encontrada.")

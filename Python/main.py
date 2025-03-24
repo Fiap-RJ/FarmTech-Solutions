@@ -82,6 +82,11 @@ def gerenciar_fazenda():
                 fazenda["largura"] = largura
                 fazenda["area"] = largura * comprimento
                 alterar_fazenda(id_fazenda, fazenda)
+                print("Fazenda alterada com sucesso!")
+
+                remover_plantio(id_fazenda, fazenda)
+                print("\nAgora, insira os dados de plantio da fazenda.")
+                inserir_plantio(id_fazenda, fazenda)
                 return
             elif escolha == "3":
                 inserir_plantio(id_fazenda, fazenda)
@@ -91,6 +96,7 @@ def gerenciar_fazenda():
                 alterar_plantio(id_fazenda, fazenda)
             elif escolha == "6":
                 remover_plantio(id_fazenda, fazenda)
+                print("Dados de plantio removidos com sucesso!")
             elif escolha == "7":
                 remover_fazenda(id_fazenda)
                 print("Fazenda removida com sucesso!")

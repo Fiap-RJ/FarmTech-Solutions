@@ -151,4 +151,3 @@ def alterar_plantio(id_fazenda, fazenda):
 def remover_plantio(id_fazenda, fazenda):
     fazenda["plantio"] = {}
     alterar_fazenda(id_fazenda, fazenda)
-    print("Dados de plantio removidos com sucesso!")
