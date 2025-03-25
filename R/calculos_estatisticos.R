@@ -1,3 +1,5 @@
+install.packages('DescTools')
+library(DescTools)
 #base de dados: consumo de água por mês por hectare em m³
 consumo.mensal.agua=data.frame(
   cana=c(265,240,265,257,265,257,265,265,257,265,257,265),
