@@ -33,7 +33,7 @@ def menu_principal():
             adicionar_fazenda(nome, area, largura, comprimento)
         elif escolha == "2":
             gerenciar_fazenda()
-        elif escolha == "3":
+        elif escolha == "0":
             print("Saindo do programa...")
             break
         else:
